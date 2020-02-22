@@ -119,9 +119,12 @@ case "$1" in
     zstop
     ;;
   restart)
-    $0 stop
+  echo "Restarting $KNAME and $ZNAME"
+     kstop
+	 zstop
     sleep 3
-    $0 start
+     zstart
+	 kstart
     ;;
   status)
     zstatus
